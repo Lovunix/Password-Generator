@@ -88,6 +88,41 @@ var upperCasedCharacters = [
   'Z'
 ];
 
+///validate process
+
+function validatelengh () {
+
+};
+
+function validasChar () {
+
+};
+
+function validatecLetter () {
+
+};
+
+function validatelLetter () {
+
+};
+
+function validatenumber () {
+
+};
+
+
+///User Interaction
+
+const usersChar = prompt("Please enter at least one special character. Special characters include !@#$%^&*()-_=+{}[]|;:");
+
+alert(usersChar);
+const usersnumber = prompt("Please enter a number");
+alert(usersnumber);
+const userscLetter = prompt("Please enter a Capital Leter");
+alert(userscLetter);
+const userslLetter = prompt("Please enter a Lower Case Letter");
+alert(userslLetter);
+
 // Function to prompt user for password options
 function getPasswordOptions() {
 
@@ -116,3 +151,11 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);
+
+/// arch///
+/// input the lengh of your password from array + store variable 
+/// input  from Alphabet a Capital Letter from array + store variable
+/// input from Alphabet a lowcase letter from array + store variable ( possible together ??? mmm)
+/// Number from array store in a variable 
+/// generate an string including the inputs ( openssl base64 is that possible with JavaScrip??) what about encrytion and decryption???
+/// is a hash acceptable? should I ask?
