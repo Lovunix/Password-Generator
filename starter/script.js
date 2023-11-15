@@ -116,6 +116,7 @@ function validateCletter () {
   }
 };
 
+////validate process for the LowerCase letters 
 function validateLletter () {
   usersLletter = prompt("Please enter a LowCase Leter");
   if(lowerCasedCharacters.includes(usersLletter)) {
@@ -129,6 +130,7 @@ function validateLletter () {
   }
 };
 
+////validate process for the numbers
 function validateNumber () {
   usersNumber = prompt("Please enter a number 0 to 9");
   if(numericCharacters.includes(usersNumber)) {
@@ -142,6 +144,7 @@ function validateNumber () {
   }
 };
 
+////Give the option to choose the lenght of the password
 function validatelengh () {
   userslengh = prompt("Please select the lenght of your password between a minum of 8 to a maximun of 128 characters");
   if (userslengh < 8 || userslengh > 128 || userslengh === " " ) {
@@ -154,26 +157,29 @@ function validatelengh () {
 };
 
 
-////function to convert all these inputs in one varialbe ? perphas???
+////function to generate password randomly including the users choose.
 
 randomString = " ";
+totalpasswd = " ";
 
 function generatePassword() {
   ///calling functions
-// var usersChar = validateChar();
-// var usersNumber = validateNumber();
-// var usersCletter = validateCletter();
-// var usersLletter = validateLletter();
-var userslengh = validatelengh();
-// var usersPool = usersChar + usersCletter + usersLletter + usersNumber
-var characters =  specialCharacters + numericCharacters + lowerCasedCharacters + numericCharacters
-for (let i = 0; i < userslengh; i++) {
-randomString += characters[Math.floor(Math.random() * characters.length)];
-}
+    var usersChar = validateChar();
+    var usersNumber = validateNumber();
+    var usersCletter = validateCletter();
+    var usersLletter = validateLletter();
+    var userslengh = validatelengh();
+    var usersPool = (usersChar + usersCletter + usersLletter + usersNumber);
+    var characters =  (specialCharacters + numericCharacters + lowerCasedCharacters + numericCharacters + upperCasedCharacters);
+      for (let i = 5; i < userslengh; i++) {
+      randomString += characters[Math.floor(Math.random() * characters.length)];
+       };
+    var totalpasswd = (randomString + usersPool );
+    return totalpasswd;
+      };
 
-  //console.log(randomString)
-  return randomString;
-};
+
+
 // // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
 
@@ -187,5 +193,3 @@ function writePassword() {
 
 // // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);
-
-
