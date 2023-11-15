@@ -170,7 +170,7 @@ function generatePassword() {
     var usersLletter = validateLletter();
     var userslengh = validatelengh();
     var usersPool = (usersChar + usersCletter + usersLletter + usersNumber);
-    var characters =  (specialCharacters + numericCharacters + lowerCasedCharacters + numericCharacters + upperCasedCharacters);
+    var characters =  ( numericCharacters + lowerCasedCharacters + numericCharacters + upperCasedCharacters + specialCharacters);
       for (let i = 5; i < userslengh; i++) {
       randomString += characters[Math.floor(Math.random() * characters.length)];
        };
