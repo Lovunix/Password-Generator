@@ -1,29 +1,7 @@
 // Array of special characters to be included in password
-var specialCharacters = [
-  '@',
-  '&',
-  '%',
-  '+',
-  '\\',
-  '/',
-  "'",
-  '!',
-  '#',
-  '$',
-  '^',
-  '?',
-  ':',
-  ')',
-  '(',
-  '}',
-  '{',
-  ']',
-  '[',
-  '~',
-  '-',
-  '_',
-  '.'
-];
+// var specialCharacters = [ '@','&','%','*','+','\\','/',"'",'!','#','$','^','?',':',')','(','}','{',']','[','~','-','_','.' ];
+
+var specialCharacters = ['@', '&', '%', '*', '+', '\\', '/', "'", '!', '#', '$', '^', '?', ':', ')', '(', '}', '{', ']', '[', '~', '-', '_', '.'];
 
 // Array of numeric characters to be included in password
 var numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
@@ -170,7 +148,7 @@ function generatePassword() {
     var usersLletter = validateLletter();
     var userslengh = validatelengh();
     var usersPool = (usersChar + usersCletter + usersLletter + usersNumber);
-    var characters =  ( numericCharacters + lowerCasedCharacters + upperCasedCharacters + specialCharacters);
+    var characters =  numericCharacters.concat(lowerCasedCharacters, upperCasedCharacters,  specialCharacters);
       for (let i = 5; i < userslengh; i++) {
       randomString += characters[Math.floor(Math.random() * characters.length)];
        };
