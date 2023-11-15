@@ -88,60 +88,96 @@ var upperCasedCharacters = [
   'Z'
 ];
 
-///validate process
+
+///validate process for the special characters
+function validateChar () {
+   var usersChar = prompt("Please enter at least one special character. Special characters include !@#$%^&*()-_=+{}[]|;:");
+  if (specialCharacters.includes(usersChar)){
+  alert('your character is valid ' + usersChar)
+  return usersChar;
+  } else if 
+    (usersChar > 1) {
+  return validateChar();
+  } else {
+    return validateChar();
+  }
+}
+////validate process for the capital letters 
+function validateCletter () {
+  usersCletter = prompt("Please enter a Capital Leter");
+  if(upperCasedCharacters.includes(usersCletter)) {
+  alert('your character is valid ' + usersCletter)
+  return usersCletter;
+   } else if 
+    (usersCletter > 1) {
+  return validateCletter();
+  } else {
+    return validateCletter();
+  }
+};
+
+function validateLletter () {
+  usersLletter = prompt("Please enter a LowCase Leter");
+  if(lowerCasedCharacters.includes(usersLletter)) {
+  alert('your character is valid ' + usersLletter)
+  return usersLletter;
+   } else if 
+    (usersLletter > 1) {
+  return validateLletter();
+  } else {
+    return validateLletter();
+  }
+};
+
+function validateNumber () {
+  usersNumber = prompt("Please enter a number 0 to 9");
+  if(numericCharacters.includes(usersNumber)) {
+  alert('your character is valid ' + usersNumber)
+  return usersNumber;
+   } else if 
+    (usersNumber > 1) {
+  return validateNumber();
+  } else {
+    return validateNumber();
+  }
+};
 
 function validatelengh () {
-
-};
-
-function validasChar () {
-
-};
-
-function validatecLetter () {
-
-};
-
-function validatelLetter () {
-
-};
-
-function validatenumber () {
-
+  userslengh = prompt("Please select the lenght of your password between a minum of 8 to a maximun of 128 characters");
+  if (userslengh < 8 || userslengh > 128 || userslengh === " " ) {
+  alert("The minimun lenght is 8 and max 128 character");
+  return validatelengh();
+  } else {
+    alert(" you password lenght will be " +  userslengh )
+  return userslengh;
+  }
 };
 
 
-///User Interaction
+////function to convert all these inputs in one varialbe ? perphas???
 
-const usersChar = prompt("Please enter at least one special character. Special characters include !@#$%^&*()-_=+{}[]|;:");
+randomString = " ";
 
-alert(usersChar);
-const usersnumber = prompt("Please enter a number");
-alert(usersnumber);
-const userscLetter = prompt("Please enter a Capital Leter");
-alert(userscLetter);
-const userslLetter = prompt("Please enter a Lower Case Letter");
-alert(userslLetter);
-
-// Function to prompt user for password options
-function getPasswordOptions() {
-
-}
-
-// Function for getting a random element from an array
-function getRandom(arr) {
-
-}
-
-// Function to generate password with user input
 function generatePassword() {
-
+  ///calling functions
+// var usersChar = validateChar();
+// var usersNumber = validateNumber();
+// var usersCletter = validateCletter();
+// var usersLletter = validateLletter();
+var userslengh = validatelengh();
+// var usersPool = usersChar + usersCletter + usersLletter + usersNumber
+var characters =  specialCharacters + numericCharacters + lowerCasedCharacters + numericCharacters
+for (let i = 0; i < userslengh; i++) {
+randomString += characters[Math.floor(Math.random() * characters.length)];
 }
 
-// Get references to the #generate element
+  //console.log(randomString)
+  return randomString;
+};
+// // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
 
-// Write password to the #password input
+// // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector('#password');
@@ -149,13 +185,7 @@ function writePassword() {
   passwordText.value = password;
 }
 
-// Add event listener to generate button
+// // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);
 
-/// arch///
-/// input the lengh of your password from array + store variable 
-/// input  from Alphabet a Capital Letter from array + store variable
-/// input from Alphabet a lowcase letter from array + store variable ( possible together ??? mmm)
-/// Number from array store in a variable 
-/// generate an string including the inputs ( openssl base64 is that possible with JavaScrip??) what about encrytion and decryption???
-/// is a hash acceptable? should I ask?
+
