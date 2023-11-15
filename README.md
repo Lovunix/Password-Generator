@@ -25,4 +25,4 @@ This password generator is build in JavaScript.
 
 
 
-Lincence MIT
+Licence MIT
